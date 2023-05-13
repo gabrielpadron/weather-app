@@ -27,8 +27,8 @@ search.addEventListener('click', () => {
       const image = document.querySelector('.weather-box img');
       const temperature = document.querySelector('.weather-box .temperature');
       const description = document.querySelector('.weather-box .description');
-      const humidity = document.querySelector('.weather-box .humidity');
-      const wind = document.querySelector('.weather-box .wind');
+      const humidity = document.querySelector('.weather-details .humidity');
+      const wind = document.querySelector('.weather-details .wind');
 
       switch (json.weather[0].main) {
         case 'Clear':
