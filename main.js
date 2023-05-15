@@ -8,10 +8,12 @@ search.addEventListener('click', () => {
   const apiKey = '5736dd6041c95a07eb43b97cb844ae83';
   const city = document.querySelector('.search-box input').value;
 
-  if (city == '') return;
+  if (city === '')
+    return;
 
-  fetch(`https://api.openweathermap.org/data/2.5/weather?q=${city}&units=metric&appid=${apiKey}`)
-    .then(response => response.json()).then(json => {
+  fetch(`http://api.openweathermap.org/data/2.5/weather?q=${city}&units=metric&appid=${apiKey}`)
+    .then(response => response.json())
+    .then(json => {
       if (json.cod == '404') {
         container.style.height = '400px';
         weatherBox.style.display = 'none';
@@ -27,8 +29,8 @@ search.addEventListener('click', () => {
       const image = document.querySelector('.weather-box img');
       const temperature = document.querySelector('.weather-box .temperature');
       const description = document.querySelector('.weather-box .description');
-      const humidity = document.querySelector('.weather-details .humidity');
-      const wind = document.querySelector('.weather-details .wind');
+      const humidity = document.querySelector('.weather-details .humidity span');
+      const wind = document.querySelector('.weather-details .wind span');
 
       switch (json.weather[0].main) {
         case 'Clear':
